@@ -1,1 +1,20 @@
-# kth-missing-positive-number
+class Solution {
+public:
+    int findKthPositive(vector<int>& arr, int k) {
+         int load=1;
+         int i=0;
+         while(k>0){
+            if(i<arr.size() && arr[i]==load){
+                i++;
+            }
+            else{
+                k--;
+                if(k==0){
+                    return load;
+                }
+            }
+            load++;
+         }
+         return load;
+    }
+};
